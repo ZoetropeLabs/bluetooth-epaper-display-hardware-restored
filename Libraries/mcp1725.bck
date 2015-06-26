@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MCP1725
+D TPS54360DDA, 60V 3.5 A, Step Down DC-DC Converter with Eco-mode, HSOIC8
+K Step-Down DC-DC Switching Regulator High Voltage High Frequency
+F http://www.ti.com/lit/ds/symlink/tps54360.pdf
+$ENDCMP
+#
+#End Doc Library

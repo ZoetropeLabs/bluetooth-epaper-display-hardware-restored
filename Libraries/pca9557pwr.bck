@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP PCA9557PWR
+D PCA9557PWR
+K I/O Expander 8 Bit
+F http://www.farnell.com/datasheets/1850965.pdf
+$ENDCMP
+#
+#End Doc Library
