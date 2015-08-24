@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source "/home/bitdivision/iot/ePaper/Small Display.sch")
-    (date "Fri 26 Jun 2015 09:31:48 BST")
+    (date "Fri 10 Jul 2015 16:48:24 BST")
     (tool "Eeschema (2015-04-29 BZR 5630)-product")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -40,7 +40,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 55881725))
     (comp (ref R4)
-      (value R)
+      (value 470)
       (footprint Resistors_SMD:R_0603)
       (libsource (lib device) (part R))
       (sheetpath (names /) (tstamps /))
@@ -52,7 +52,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 55881727))
     (comp (ref R6)
-      (value R)
+      (value 2k)
       (footprint Resistors_SMD:R_0603)
       (libsource (lib device) (part R))
       (sheetpath (names /) (tstamps /))
@@ -118,7 +118,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 55883223))
     (comp (ref C2)
-      (value C)
+      (value 1uF)
       (footprint Capacitors_SMD:C_0603)
       (libsource (lib device) (part C))
       (sheetpath (names /) (tstamps /))
@@ -160,7 +160,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 55893379))
     (comp (ref R15)
-      (value 3R)
+      (value 3)
       (footprint Resistors_SMD:R_0603)
       (libsource (lib device) (part R))
       (sheetpath (names /) (tstamps /))
@@ -244,7 +244,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 5589F736))
     (comp (ref C4)
-      (value C)
+      (value 1uF)
       (footprint Capacitors_SMD:C_0603)
       (libsource (lib device) (part C))
       (sheetpath (names /) (tstamps /))
@@ -262,7 +262,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 558A4D9B))
     (comp (ref R10)
-      (value R)
+      (value 200)
       (footprint Resistors_SMD:R_0603)
       (libsource (lib device) (part R))
       (sheetpath (names /) (tstamps /))
@@ -382,6 +382,119 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 558CB172)))
   (libparts
+    (libpart (lib device) (part BATTERY)
+      (fields
+        (field (name Reference) BT)
+        (field (name Value) BATTERY))
+      (pins
+        (pin (num 1) (name +) (type passive))
+        (pin (num 2) (name -) (type passive))))
+    (libpart (lib device) (part C)
+      (description "Condensateur non polarise")
+      (footprints
+        (fp SM*)
+        (fp C?)
+        (fp C1-1))
+      (fields
+        (field (name Reference) C)
+        (field (name Value) C))
+      (pins
+        (pin (num 1) (name ~) (type passive))
+        (pin (num 2) (name ~) (type passive))))
+    (libpart (lib device) (part CP1)
+      (description "Condensateur polarise")
+      (footprints
+        (fp CP*)
+        (fp SM*))
+      (fields
+        (field (name Reference) C)
+        (field (name Value) CP1))
+      (pins
+        (pin (num 1) (name ~) (type passive))
+        (pin (num 2) (name ~) (type passive))))
+    (libpart (lib device) (part DIODE)
+      (description "Diode simple")
+      (footprints
+        (fp D?)
+        (fp S*))
+      (fields
+        (field (name Reference) D)
+        (field (name Value) DIODE))
+      (pins
+        (pin (num 1) (name A) (type passive))
+        (pin (num 2) (name K) (type passive))))
+    (libpart (lib device) (part INDUCTOR_SMALL)
+      (fields
+        (field (name Reference) L)
+        (field (name Value) INDUCTOR_SMALL))
+      (pins
+        (pin (num 1) (name 1) (type input))
+        (pin (num 2) (name 2) (type input))))
+    (libpart (lib device) (part JUMPER)
+      (fields
+        (field (name Reference) JP)
+        (field (name Value) JUMPER))
+      (pins
+        (pin (num 1) (name 1) (type passive))
+        (pin (num 2) (name 2) (type passive))))
+    (libpart (lib device) (part LED)
+      (footprints
+        (fp LED-3MM)
+        (fp LED-5MM)
+        (fp LED-10MM)
+        (fp LED-0603)
+        (fp LED-0805)
+        (fp LED-1206)
+        (fp LEDV))
+      (fields
+        (field (name Reference) D)
+        (field (name Value) LED))
+      (pins
+        (pin (num 1) (name A) (type passive))
+        (pin (num 2) (name K) (type passive))))
+    (libpart (lib device) (part R)
+      (description Resistance)
+      (footprints
+        (fp R?)
+        (fp SM0603)
+        (fp SM0805)
+        (fp R?-*)
+        (fp SM1206))
+      (fields
+        (field (name Reference) R)
+        (field (name Value) R))
+      (pins
+        (pin (num 1) (name ~) (type passive))
+        (pin (num 2) (name ~) (type passive))))
+    (libpart (lib device) (part SW_PUSH)
+      (description "Push Button")
+      (fields
+        (field (name Reference) SW)
+        (field (name Value) SW_PUSH))
+      (pins
+        (pin (num 1) (name 1) (type passive))
+        (pin (num 2) (name 2) (type passive))))
+    (libpart (lib conn) (part CONN_2X2)
+      (description "Symbole general de connecteur")
+      (fields
+        (field (name Reference) P)
+        (field (name Value) CONN_2X2))
+      (pins
+        (pin (num 1) (name 1) (type passive))
+        (pin (num 2) (name 2) (type passive))
+        (pin (num 3) (name 3) (type passive))
+        (pin (num 4) (name 4) (type passive))))
+    (libpart (lib conn) (part CONN_5)
+      (description "Symbole general de connecteur")
+      (fields
+        (field (name Reference) P)
+        (field (name Value) CONN_5))
+      (pins
+        (pin (num 1) (name ~) (type passive))
+        (pin (num 2) (name ~) (type passive))
+        (pin (num 3) (name ~) (type passive))
+        (pin (num 4) (name ~) (type passive))
+        (pin (num 5) (name ~) (type passive))))
     (libpart (lib ptr5518) (part PTR5518)
       (fields
         (field (name Reference) U)
@@ -402,58 +515,6 @@
         (pin (num 13) (name ADC1/P0.27) (type power_in))
         (pin (num 14) (name P0.28) (type power_in))
         (pin (num 15) (name P0.29) (type power_in))))
-    (libpart (lib ok-switches) (part SW-SPDT)
-      (footprints
-        (fp SW-SPDT-*))
-      (fields
-        (field (name Reference) SW)
-        (field (name Value) SW-SPDT))
-      (pins
-        (pin (num 1) (name ~) (type passive))
-        (pin (num 2) (name ~) (type passive))
-        (pin (num 3) (name ~) (type passive))))
-    (libpart (lib photo-transistor-npn) (part PHOTO-TRANSISTOR-NPN)
-      (footprints
-        (fp *-EC)
-        (fp *-CE))
-      (fields
-        (field (name Reference) Q)
-        (field (name Value) PHOTO-TRANSISTOR-NPN))
-      (pins
-        (pin (num 1) (name C) (type passive))
-        (pin (num 2) (name E) (type passive))))
-    (libpart (lib "Small Display-cache") (part ESP-07)
-      (fields
-        (field (name Reference) M)
-        (field (name Value) ESP-07))
-      (pins
-        (pin (num 1) (name RESET) (type input))
-        (pin (num 2) (name ADC) (type BiDi))
-        (pin (num 3) (name CH_PD) (type BiDi))
-        (pin (num 4) (name GPIO16) (type BiDi))
-        (pin (num 5) (name GPIO14) (type BiDi))
-        (pin (num 6) (name GPIO12) (type BiDi))
-        (pin (num 7) (name GPIO13) (type BiDi))
-        (pin (num 8) (name VCC) (type power_in))
-        (pin (num 9) (name GND) (type power_in))
-        (pin (num 10) (name GPIO15) (type BiDi))
-        (pin (num 11) (name GPIO2) (type BiDi))
-        (pin (num 12) (name GPIO0) (type BiDi))
-        (pin (num 13) (name GPIO4) (type BiDi))
-        (pin (num 14) (name GPIO5) (type BiDi))
-        (pin (num 15) (name RXD) (type input))
-        (pin (num 16) (name TXD) (type output))))
-    (libpart (lib misc_epd) (part DIODE-SW)
-      (footprints
-        (fp D?)
-        (fp S*))
-      (fields
-        (field (name Reference) D)
-        (field (name Value) DIODE-SW))
-      (pins
-        (pin (num 1) (name A) (type passive))
-        (pin (num 2) (name K) (type passive))
-        (pin (num 3) (name Com) (type input))))
     (libpart (lib pca9557pwr) (part PCA9557PWR)
       (description PCA9557PWR)
       (docs http://www.farnell.com/datasheets/1850965.pdf)
@@ -477,6 +538,17 @@
         (pin (num 14) (name P7) (type output))
         (pin (num 15) (name ~RESET) (type input))
         (pin (num 16) (name VCC) (type power_in))))
+    (libpart (lib misc_epd) (part DIODE-SW)
+      (footprints
+        (fp D?)
+        (fp S*))
+      (fields
+        (field (name Reference) D)
+        (field (name Value) DIODE-SW))
+      (pins
+        (pin (num 1) (name A) (type passive))
+        (pin (num 2) (name K) (type passive))
+        (pin (num 3) (name Com) (type input))))
     (libpart (lib misc_epd) (part MOLEX_FPC_RCPT_24POS)
       (fields
         (field (name Reference) X)
@@ -525,50 +597,47 @@
         (pin (num 1) (name G) (type input))
         (pin (num 2) (name S) (type passive))
         (pin (num 3) (name D) (type passive))))
-    (libpart (lib conn) (part CONN_5)
-      (description "Symbole general de connecteur")
+    (libpart (lib ok-switches) (part SW-SPDT)
+      (footprints
+        (fp SW-SPDT-*))
       (fields
-        (field (name Reference) P)
-        (field (name Value) CONN_5))
+        (field (name Reference) SW)
+        (field (name Value) SW-SPDT))
       (pins
         (pin (num 1) (name ~) (type passive))
         (pin (num 2) (name ~) (type passive))
-        (pin (num 3) (name ~) (type passive))
-        (pin (num 4) (name ~) (type passive))
-        (pin (num 5) (name ~) (type passive))))
-    (libpart (lib device) (part R)
-      (description Resistance)
+        (pin (num 3) (name ~) (type passive))))
+    (libpart (lib photo-transistor-npn) (part PHOTO-TRANSISTOR-NPN)
       (footprints
-        (fp R?)
-        (fp SM0603)
-        (fp SM0805)
-        (fp R?-*)
-        (fp SM1206))
+        (fp *-EC)
+        (fp *-CE))
       (fields
-        (field (name Reference) R)
-        (field (name Value) R))
+        (field (name Reference) Q)
+        (field (name Value) PHOTO-TRANSISTOR-NPN))
       (pins
-        (pin (num 1) (name ~) (type passive))
-        (pin (num 2) (name ~) (type passive))))
-    (libpart (lib device) (part SW_PUSH)
-      (description "Push Button")
+        (pin (num 1) (name C) (type passive))
+        (pin (num 2) (name E) (type passive))))
+    (libpart (lib "Small Display-cache") (part ESP-07)
       (fields
-        (field (name Reference) SW)
-        (field (name Value) SW_PUSH))
+        (field (name Reference) M)
+        (field (name Value) ESP-07))
       (pins
-        (pin (num 1) (name 1) (type passive))
-        (pin (num 2) (name 2) (type passive))))
-    (libpart (lib device) (part CP1)
-      (description "Condensateur polarise")
-      (footprints
-        (fp CP*)
-        (fp SM*))
-      (fields
-        (field (name Reference) C)
-        (field (name Value) CP1))
-      (pins
-        (pin (num 1) (name ~) (type passive))
-        (pin (num 2) (name ~) (type passive))))
+        (pin (num 1) (name RESET) (type input))
+        (pin (num 2) (name ADC) (type BiDi))
+        (pin (num 3) (name CH_PD) (type BiDi))
+        (pin (num 4) (name GPIO16) (type BiDi))
+        (pin (num 5) (name GPIO14) (type BiDi))
+        (pin (num 6) (name GPIO12) (type BiDi))
+        (pin (num 7) (name GPIO13) (type BiDi))
+        (pin (num 8) (name VCC) (type power_in))
+        (pin (num 9) (name GND) (type power_in))
+        (pin (num 10) (name GPIO15) (type BiDi))
+        (pin (num 11) (name GPIO2) (type BiDi))
+        (pin (num 12) (name GPIO0) (type BiDi))
+        (pin (num 13) (name GPIO4) (type BiDi))
+        (pin (num 14) (name GPIO5) (type BiDi))
+        (pin (num 15) (name RXD) (type input))
+        (pin (num 16) (name TXD) (type output))))
     (libpart (lib "Small Display-cache") (part MCP1725)
       (footprints
         (fp *SO*))
@@ -616,95 +685,26 @@
         (pin (num 1) (name 1) (type passive))
         (pin (num 2) (name 2) (type passive))
         (pin (num 3) (name 3) (type passive))
-        (pin (num 4) (name 4) (type passive))))
-    (libpart (lib conn) (part CONN_2X2)
-      (description "Symbole general de connecteur")
-      (fields
-        (field (name Reference) P)
-        (field (name Value) CONN_2X2))
-      (pins
-        (pin (num 1) (name 1) (type passive))
-        (pin (num 2) (name 2) (type passive))
-        (pin (num 3) (name 3) (type passive))
-        (pin (num 4) (name 4) (type passive))))
-    (libpart (lib device) (part INDUCTOR_SMALL)
-      (fields
-        (field (name Reference) L)
-        (field (name Value) INDUCTOR_SMALL))
-      (pins
-        (pin (num 1) (name 1) (type input))
-        (pin (num 2) (name 2) (type input))))
-    (libpart (lib device) (part JUMPER)
-      (fields
-        (field (name Reference) JP)
-        (field (name Value) JUMPER))
-      (pins
-        (pin (num 1) (name 1) (type passive))
-        (pin (num 2) (name 2) (type passive))))
-    (libpart (lib device) (part BATTERY)
-      (fields
-        (field (name Reference) BT)
-        (field (name Value) BATTERY))
-      (pins
-        (pin (num 1) (name +) (type passive))
-        (pin (num 2) (name -) (type passive))))
-    (libpart (lib device) (part DIODE)
-      (description "Diode simple")
-      (footprints
-        (fp D?)
-        (fp S*))
-      (fields
-        (field (name Reference) D)
-        (field (name Value) DIODE))
-      (pins
-        (pin (num 1) (name A) (type passive))
-        (pin (num 2) (name K) (type passive))))
-    (libpart (lib device) (part C)
-      (description "Condensateur non polarise")
-      (footprints
-        (fp SM*)
-        (fp C?)
-        (fp C1-1))
-      (fields
-        (field (name Reference) C)
-        (field (name Value) C))
-      (pins
-        (pin (num 1) (name ~) (type passive))
-        (pin (num 2) (name ~) (type passive))))
-    (libpart (lib device) (part LED)
-      (footprints
-        (fp LED-3MM)
-        (fp LED-5MM)
-        (fp LED-10MM)
-        (fp LED-0603)
-        (fp LED-0805)
-        (fp LED-1206)
-        (fp LEDV))
-      (fields
-        (field (name Reference) D)
-        (field (name Value) LED))
-      (pins
-        (pin (num 1) (name A) (type passive))
-        (pin (num 2) (name K) (type passive)))))
+        (pin (num 4) (name 4) (type passive)))))
   (libraries
+    (library (logical device)
+      (uri /usr/share/kicad/library/device.lib))
+    (library (logical conn)
+      (uri /usr/share/kicad/library/conn.lib))
     (library (logical ptr5518)
       (uri /home/bitdivision/iot/ePaper/Libraries/ptr5518.lib))
     (library (logical misc_epd)
       (uri /home/bitdivision/iot/ePaper/Libraries/misc_epd.lib))
-    (library (logical "Small Display-cache")
-      (uri "/home/bitdivision/iot/ePaper/Small Display-cache.lib"))
-    (library (logical device)
-      (uri /usr/share/kicad/library/device.lib))
     (library (logical pca9557pwr)
       (uri /home/bitdivision/iot/ePaper/Libraries/pca9557pwr.lib))
-    (library (logical photo-transistor-npn)
-      (uri /home/bitdivision/iot/ePaper/Libraries/photo-transistor-npn.lib))
     (library (logical ok-switches)
       (uri /home/bitdivision/iot/ePaper/Libraries/ok-switches.lib))
     (library (logical ntr4170n)
       (uri /home/bitdivision/iot/ePaper/Libraries/ntr4170n.lib))
-    (library (logical conn)
-      (uri /usr/share/kicad/library/conn.lib)))
+    (library (logical photo-transistor-npn)
+      (uri /home/bitdivision/iot/ePaper/Libraries/photo-transistor-npn.lib))
+    (library (logical "Small Display-cache")
+      (uri "/home/bitdivision/iot/ePaper/Small Display-cache.lib")))
   (nets
     (net (code 1) (name +3.3V)
       (node (ref U5) (pin 15))
